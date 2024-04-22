@@ -1,29 +1,18 @@
-# pet_store_vue
+# 宠物商店 Vue 项目（前后端分离）
 
-This template should help get you started developing with Vue 3 in Vite.
+该项目是一个使用 Vue 框架开发的宠物商店应用。它提供了一个用户友好的界面，让用户可以浏览和购买各种宠物。
 
-## Recommended IDE Setup
+## 功能特点
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- 宠物分类浏览：用户可以按照不同的宠物分类浏览可用的宠物。
+- 宠物详情查看：用户可以查看每个宠物的详细信息，包括照片、描述和价格。
+- 购物车管理：用户可以将感兴趣的宠物添加到购物车，并管理购物车中的宠物。
+- 下单结算：用户可以选择购物车中的宠物进行结算，并完成订单。
 
-## Customize configuration
+## 技术栈
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- Vue.js：用于构建用户界面的 JavaScript 框架。
+- Vue Router：用于实现路由功能，实现页面之间的切换和导航。
+- Vuex：用于管理应用的状态，实现数据的共享和响应式更新。
+- Axios：用于发送 HTTP 请求，与后端 API 进行数据交互。
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
