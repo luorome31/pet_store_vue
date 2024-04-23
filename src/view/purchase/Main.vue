@@ -4,7 +4,7 @@
         <div class = "row mt-4">
             <ItemCard v-for="item in fakeData" :key="item.id">
             <template v-slot:img>
-                <img :src="item.image" alt="item.name" class="img-fluid">
+                <img :src="item.image" alt="item.name" class="w-100">
             </template>
             <template v-slot:title>
                 <h4 class="card-title"> {{ item.title }}</h4>

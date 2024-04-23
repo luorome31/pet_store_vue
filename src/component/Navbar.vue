@@ -24,9 +24,9 @@
         </div>
         <form class="d-flex ">
             <input type="text" class="form-control " aria-describedby="helpId" placeholder="Search product" />
-            <button type="button" class="btn btn-primary">
+            <router-link to="/search"type="button" class="btn btn-primary">
                 Search
-            </button>
+            </router-link>
         </form>
 
 

@@ -26,6 +26,11 @@ const routes = [
         name:"Search",
         component: () => import("@/view/purchase/Search.vue")
     },
+    {
+        path:"/item_info/:id",
+        name:"ItemInfo",
+        component: () => import("@/view/purchase/ItemDetail.vue")
+    },
 
     // 用户模块相关路由
     {
