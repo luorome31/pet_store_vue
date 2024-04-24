@@ -40,13 +40,40 @@
                 <h6>Total: $199.99</h6>
             </div>
             <div>
-                <router-link to="/orderConfirm" class="btn btn-outline-primary btn-sm">Proceed to Checkout</router-link>
+                <button @click="showModal" class="btn btn-outline-primary btn-sm">Proceed to Checkout</button>
             </div>
         </div>
     </div>
+        <ModalShow :title="`${title}`" ref="thisModal">
+            <template #body>
+                Your total is $199.99. 
+                <br>
+                Are you sure you want to commit your order?
+            </template>
+            <template #footer>
+                <button @click="closeModal"  class="btn btn-primary">check</button>
+            </template>
+        </ModalShow>
 </template>
 
 <script setup>
 import Navbar from "@/component/Navbar.vue";
 import ListTable from "@/component/ListTable.vue";
+import { ref } from "vue";
+import {useRouter} from "vue-router";
+import ModalShow from "@/component/ModalShow.vue";
+const title = "Commit your order";
+// const message = "Are you sure you want to commit your order?";
+// const target_address = "/cart";
+// const toggle_text = "Proceed to Checkout";
+// const button_text = "Commit";
+let thisModal = ref(null);
+let router = useRouter();
+function showModal() {
+    thisModal.value.show();
+}
+function closeModal () {
+    thisModal.value.close();
+    router.push('/orderConfirm')
+}
 </script>

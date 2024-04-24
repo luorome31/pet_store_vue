@@ -1,14 +1,15 @@
 <template>
     <div class="container">
-        <Navbar/>
+        <Navbar />
         
     </div>
 </template>
 
 <script setup>
-    import Navbar from "@/component/Navbar.vue";
+import { ref } from "vue";
+import Navbar from "@/component/Navbar.vue";
+import ModalShow from "@/component/ModalShow.vue";
+import ListTable from "@/component/ListTable.vue";
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
