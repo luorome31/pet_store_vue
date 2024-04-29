@@ -49,8 +49,8 @@
     "data": {
       "item_id": "EST-1",
       "product_id": "FI-SW-01",
-      "description": "Large Fresh Water fish from Japan.",
-      "image": "images/fish1.gif",
+      "description": "Large Fresh Water fish from Lord.",
+      "image": "image1.jpeg",
       "manufacturer": "XYZ Pets",
       "price": 199.99,
       "stock": 50
@@ -62,11 +62,11 @@
     "data": {
       "item_id": "EST-10",
       "product_id": "FI-SW-01",
-      "description": "Large Fresh Water fish from Japan.",
-      "image": "images/fish1.gif",
-      "manufacturer": "XYZ Pets",
-      "price": 199.99,
-      "stock": 50
+      "description": "Large Fresh Water fish from Test.",
+      "image": "image2.jpeg",
+      "manufacturer": "111 Pets",
+      "price": 11.99,
+      "stock": 11
     }
   }
 }
