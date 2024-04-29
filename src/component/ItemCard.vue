@@ -12,7 +12,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { getPurchases } from "@/service/purchase";
+// import { getPurchases } from "@/service/purchase";
 
 const item = ref({
     url: "https://via.placeholder.com/150",
@@ -22,10 +22,10 @@ const item = ref({
 const pama = {
     category: 'dongman',
 }
- getPurchases(pama).then((res) => {
-    console.log(res);
-    item.url = res.img;
-});
+//  getPurchases(pama).then((res) => {
+//     console.log(res);
+//     item.url = res.img;
+// });
 </script>
 
 <style lang="scss" scoped></style>

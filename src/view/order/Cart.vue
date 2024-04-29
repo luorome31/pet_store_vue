@@ -19,16 +19,16 @@
                 </tr>
             </template>
             <template v-slot:tbody>
-                <tr>
+                <tr v-for="(item,index) in cartItems" :key="item.item_id">
                     <td>
-                        <router-link to="/item_info/1">EST-1</router-link>
+                        <router-link :to="`/item_info/${item.item_id}`">{{ item.item_id }}</router-link>
                     </td>
-                    <td>Large Fresh Water Fish</td>
+                    <td>{{item.product_id}}</td>
                     <td>
-                        <input type="number" class="form-control" min="1" max="50" value="1">
+                        <input type="number" class="form-control" min="1" max="50" :value="`${item.quantity}`" @input="input_value_changed($event.target.value,index)">
                     </td>
-                    <td>$199.99</td>
-                    <td>$199.99</td>
+                    <td>${{ item.price }}.00</td>
+                    <td>${{ item.price * item.quantity }}.00</td>
                     <td>
                         <button class="btn btn-outline-danger btn-sm"><i class="bi bi-trash-fill"></i>Remove</button>
                     </td>
@@ -37,7 +37,7 @@
         </ListTable>
         <div class="d-flex justify-content-between">
             <div>
-                <h6>Total: $199.99</h6>
+                <h6>Total: ${{total_price}}.00</h6>
             </div>
             <div>
                 <button @click="showModal" class="btn btn-outline-primary btn-sm">Proceed to Checkout</button>
@@ -46,7 +46,7 @@
     </div>
         <ModalShow :title="`${title}`" ref="thisModal">
             <template #body>
-                Your total is $199.99. 
+                Your total is ${{total_price}}.00. 
                 <br>
                 Are you sure you want to commit your order?
             </template>
@@ -59,14 +59,12 @@
 <script setup>
 import Navbar from "@/component/Navbar.vue";
 import ListTable from "@/component/ListTable.vue";
-import { ref } from "vue";
+import { ref,onBeforeMount, reactive, computed } from "vue";
 import {useRouter} from "vue-router";
 import ModalShow from "@/component/ModalShow.vue";
+import axios from "axios";
+
 const title = "Commit your order";
-// const message = "Are you sure you want to commit your order?";
-// const target_address = "/cart";
-// const toggle_text = "Proceed to Checkout";
-// const button_text = "Commit";
 let thisModal = ref(null);
 let router = useRouter();
 function showModal() {
@@ -76,4 +74,31 @@ function closeModal () {
     thisModal.value.close();
     router.push('/orderConfirm')
 }
+//单个物品数量的改变监听
+function input_value_changed(newValue,index){
+    cartItems.value[index].quantity = newValue;
+}
+
+
+
+/* ----------------------------------------------------------------*/
+let cartItems = ref(null);
+//设置计算属性：总价
+let total_price = computed(()=>{
+    let temp = 0;
+    if (cartItems.value?.length) {
+        cartItems.value.forEach(item => {
+            temp += item.price * item.quantity;
+        });
+    }
+    return temp;
+})
+//请求购物车数据
+onBeforeMount(() => {
+    axios.get("http://localhost:3001/cart").then((json)=>{
+        cartItems.value=json.data.data.items;
+        total_price.value=json.data.total_price;
+    })
+});
+
 </script>

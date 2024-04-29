@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-    baseURL: "https://tuapi.eees.cc/api.php",
+    // baseURL: "https://tuapi.eees.cc/api.php",
 });
 
 export const get = async (url, params) => {

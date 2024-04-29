@@ -70,7 +70,6 @@ const routes = [
         name:"OrderConfirm",
         component: () => import("@/view/order/OrderConfirm.vue")
     },
-
 ];
 
 const router = createRouter({

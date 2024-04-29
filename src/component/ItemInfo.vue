@@ -3,7 +3,8 @@
         <div class="card mb-3 col-10 offset-1 mt-5 ">
             <div class="row g-0 justify-content-center align-items-center">
                 <div class="col-md-4">
-                    <img :src="img" class="img-fluid rounded-start m-1 rounded ms-4" alt="...">
+                    <img src="@/assets/image1.jpeg" alt="My Image">
+                    <img :src="`@/assets/${itemDetail.images}`" class="img-fluid rounded-start m-1 rounded ms-4" alt="...">
                 </div>
                 <div class="col-md-8 ">
                     <div class="card-body ms-5">
@@ -32,7 +33,22 @@
 
 <script setup>
 import img from "@/assets/image1.jpeg";
+import { onBeforeMount, ref } from "vue";
+import axios from "axios";
+import { useRoute } from "vue-router";
 
+let itemDetail = ref(null);
+
+onBeforeMount(() => {
+    const route = useRoute();
+    const item_id = route.params.id;
+    console.log(item_id)
+    axios.get("http://localhost:3001/" + item_id).then((json) => {
+        itemDetail.value = json.data.data;
+        console.log(json.data.data);
+        console.log(itemDetail.value);
+    })
+});
 </script>
 
 <style lang="scss" scoped></style>

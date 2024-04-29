@@ -1,0 +1,72 @@
+{
+  "cart": {
+    "code": 2000,
+    "message": "success",
+    "data": {
+      "items": [
+        {
+          "item_id": "EST-1",
+          "quantity": 1,
+          "product_id": "FI-FW-01",
+          "is_storked": true,
+          "price": 10
+        },
+        {
+          "item_id": "EST-10",
+          "quantity": 2,
+          "product_id": "FI-FW-01",
+          "is_storked": true,
+          "price": 10
+        }
+      ]
+    },
+    "total_price": 30
+  },
+  "order": {
+    "code": 2000,
+    "message": "获取订单详情成功",
+    "data": {
+      "items": [
+        {
+          "item_id": "EST-1",
+          "quantity": 1,
+          "product_id": "FI-FW-01",
+          "price": 10
+        },
+        {
+          "item_id": "EST-10",
+          "quantity": 2,
+          "product_id": "FI-FW-01",
+          "price": 10
+        }
+      ],
+      "total_price": 30
+    }
+  },
+  "EST-1": {
+    "code": 1000,
+    "message": "success",
+    "data": {
+      "item_id": "EST-1",
+      "product_id": "FI-SW-01",
+      "description": "Large Fresh Water fish from Japan.",
+      "image": "images/fish1.gif",
+      "manufacturer": "XYZ Pets",
+      "price": 199.99,
+      "stock": 50
+    }
+  },
+  "EST-10": {
+    "code": 1000,
+    "message": "success",
+    "data": {
+      "item_id": "EST-10",
+      "product_id": "FI-SW-01",
+      "description": "Large Fresh Water fish from Japan.",
+      "image": "images/fish1.gif",
+      "manufacturer": "XYZ Pets",
+      "price": 199.99,
+      "stock": 50
+    }
+  }
+}

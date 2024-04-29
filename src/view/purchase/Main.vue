@@ -1,26 +1,28 @@
 <template>
     <div class="container">
         <Navbar />
-        <div class = "row mt-4">
+        <div class="row mt-4">
             <ItemCard v-for="item in fakeData" :key="item.id">
-            <template v-slot:img>
-                <img :src="item.image" alt="item.name" class="w-100">
-            </template>
-            <template v-slot:title>
-                <h4 class="card-title"> {{ item.title }}</h4>
-            </template>
-            <template v-slot:price>
-                <p class="card-text"> {{ item.price }}</p>
-            </template>
-        </ItemCard>
+                <template v-slot:img>
+                    <img :src="item.image" alt="item.name" class="w-100">
+                </template>
+                <template v-slot:title>
+                    <h4 class="card-title"> {{ item.title }}</h4>
+                </template>
+                <template v-slot:price>
+                    <p class="card-text"> {{ item.price }}</p>
+                </template>
+            </ItemCard>
         </div>
-        
+
     </div>
 </template>
 
 <script setup>
 import Navbar from "../../component/Navbar.vue";
 import ItemCard from "@/component/ItemCard.vue";
+import axios from "axios";
+import { onMounted } from "vue";
 //let data = await fetch("https://fakestoreapi.com/products").then(res => res.json());
 let fakeData = [
     {
@@ -61,10 +63,17 @@ let fakeData = [
     }
 
 
-    // Add more fake data objects as needed
+
 ];
 
 let row = 2;
+axios.get('http://localhost:3001/cart')
+    .then(response => {
+        console.log(response.data);
+    })
+    .catch(error => {
+        console.error(error);
+    });
 </script>
 
 <style lang="scss" scoped></style>
