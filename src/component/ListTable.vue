@@ -7,7 +7,7 @@
                 <slot name="caption"></slot>
             </table-caption>
             <table
-                class="table table-bordered table-sm table-responsive"
+                class="table table-bordered table-sm table-responsive text-center"
             >
                 <thead>
                     <slot name="thead"></slot>

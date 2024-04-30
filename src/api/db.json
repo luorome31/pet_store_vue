@@ -68,5 +68,82 @@
       "price": 11.99,
       "stock": 11
     }
+  },
+  "product_list": {
+    "code": 1000,
+    "message": "success",
+    "data": {
+      "products": [
+        {
+          "product_id": "FI-SW-01",
+          "name": "Fathead fish"
+        },
+        {
+          "product_id": "FI-FW-02",
+          "name": "Goldfish"
+        }
+      ],
+      "total_results": 2,
+      "current_page": 1,
+      "total_pages": 2
+    }
+  },
+  "products_basic": {
+    "code": 1000,
+    "message": "success",
+    "data": [
+      {
+        "item_id": "EST-1",
+        "price": 199.99,
+        "stock": 50,
+        "image": "image1.jpeg"
+      },
+      {
+        "item_id": "EST-10",
+        "price": 199.99,
+        "stock": 50,
+        "image": "image2.jpeg"
+      }
+    ]
+  },
+  "item_main": {
+    "code": 1000,
+    "message": "success",
+    "data": {
+      "items": [
+        {
+          "item_id": "EST-1",
+          "price": 199.99,
+          "stock": 50,
+          "image": "image4.jpg"
+        },
+        {
+          "item_id": "EST-10",
+          "price": 199.99,
+          "stock": 50,
+          "image": "image5.jpg"
+        },
+        {
+          "item_id": "EST-1",
+          "price": 199.99,
+          "stock": 50,
+          "image": "image6.jpg"
+        },
+        {
+          "item_id": "EST-1",
+          "price": 199.99,
+          "stock": 50,
+          "image": "image1.jpeg"
+        },
+        {
+          "item_id": "EST-1",
+          "price": 199.99,
+          "stock": 50,
+          "image": "image2.jpeg"
+        }
+      ],
+      "total_pages": 10,
+      "current_page": 1
+    }
   }
 }

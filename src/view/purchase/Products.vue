@@ -27,19 +27,17 @@
 <script setup>
 import Navbar from "@/component/Navbar.vue";
 import ListTable from "@/component/ListTable.vue";
-import { ref } from 'vue';
+import { onBeforeMount, ref } from 'vue';
+import axios from "axios";
 
-const productList = ref([
-    {
-        product_id: "FI-SW-01",
-        name: "Koi",
-    },
-    {
-        product_id: "FI-FW-02",
-        name: "Goldfish",
-    }
-]);
+let productList = ref(null)
 
+onBeforeMount(() => {
+    axios.get("http://localhost:3001/product_list").then(res => {
+        productList.value = res.data.data.products;
+        console.log(productList.value);
+    });
+});
 </script>
 
 <style lang="scss" scoped></style>

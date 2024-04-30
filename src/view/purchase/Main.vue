@@ -2,15 +2,22 @@
     <div class="container">
         <Navbar />
         <div class="row mt-4">
-            <ItemCard v-for="item in fakeData" :key="item.id">
+            <ItemCard v-for="item in item_main" :key="item.id">
                 <template v-slot:img>
-                    <img :src="item.image" alt="item.name" class="w-100">
+                    <img :src="'/src/assets/' + `${item?.image}`" alt="item.name" class="w-100 rounded">
                 </template>
+
                 <template v-slot:title>
-                    <h4 class="card-title"> {{ item.title }}</h4>
+                    <div class="border-top px-2 mx-2 "></div>
+                    <h6 class="card-title mt-1"> <i class="bi bi-arrow-right"></i> {{ item.item_id }} <i
+                            class="bi bi-arrow-left"></i></h6>
                 </template>
                 <template v-slot:price>
-                    <p class="card-text"> {{ item.price }}</p>
+                    <p class="card-text"><i class="bi bi-tag"></i> <small class="text-muted">Price:$ {{ item.price
+                            }}</small></p>
+                    <router-link :to="`/item_info/${item.item_id}`" class="link text-decoration-none">
+                        <i class="bi bi-bag-heart"></i> add it 
+                    </router-link>
                 </template>
             </ItemCard>
         </div>
@@ -23,6 +30,7 @@ import Navbar from "../../component/Navbar.vue";
 import ItemCard from "@/component/ItemCard.vue";
 import axios from "axios";
 import { onMounted } from "vue";
+import { ref } from "vue";
 //let data = await fetch("https://fakestoreapi.com/products").then(res => res.json());
 let fakeData = [
     {
@@ -66,14 +74,19 @@ let fakeData = [
 
 ];
 
+let item_main = ref(null);
 let row = 2;
-axios.get('http://localhost:3001/cart')
-    .then(response => {
-        console.log(response.data);
-    })
-    .catch(error => {
-        console.error(error);
-    });
+
+onMounted(() => {
+    axios.get('http://localhost:3001/item_main')
+        .then(response => {
+            item_main.value = response.data.data.items;
+            console.log(item_main.value);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+});
 </script>
 
 <style lang="scss" scoped></style>
