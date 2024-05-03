@@ -12,7 +12,7 @@
       >Sign In</router-link
     >
     <a v-if="loginAccount" class="nav-link" @click="signOut">Sign Out</a>
-    <router-link v-if="loginAccount" class="nav-link" to="/editAccount"
+    <router-link v-if="loginAccount" class="nav-link" to="/userEdit"
       >My Account</router-link
     >
 
