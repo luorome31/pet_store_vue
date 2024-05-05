@@ -145,5 +145,23 @@
       "total_pages": 10,
       "current_page": 1
     }
+  },
+  "user": {
+    "code": 2000,
+    "message": "success",
+    "data": {
+      "users": [
+        {
+          "username": "wx",
+          "password": 123
+        
+        },
+        {
+          "username": "wx277",
+          "password": 123
+     
+        }
+      ]
+    }
   }
 }

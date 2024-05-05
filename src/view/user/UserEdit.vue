@@ -44,13 +44,6 @@
           class="demo-ruleForm"
           v-if="isOrder && isLog === false"
         >
-          <el-form-item label="Username" prop="pass">
-            <el-input
-              v-model="ruleForm.pass"
-              type="password"
-              autocomplete="off"
-            />
-          </el-form-item>
           <el-form-item label="Password" prop="pass">
             <el-input
               v-model="ruleForm.pass"
@@ -65,69 +58,69 @@
               autocomplete="off"
             />
           </el-form-item>
-          <el-form-item label="FirstName" prop="age">
-            <el-input v-model.number="ruleForm.age" />
+          <el-form-item label="FirstName" prop="FirstName">
+            <el-input v-model.number="ruleForm.FirstName" />
           </el-form-item>
 
-          <el-form-item label="LastName" prop="pass">
+          <el-form-item label="LastName" prop="LastName">
             <el-input
-              v-model="ruleForm.pass"
+              v-model="ruleForm.LastName"
               type="password"
               autocomplete="off"
             />
           </el-form-item>
-          <el-form-item label="Email" prop="pass">
+          <el-form-item label="Email" prop="email">
             <el-input
-              v-model="ruleForm.pass"
+              v-model="ruleForm.email"
               type="password"
               autocomplete="off"
             />
           </el-form-item>
-          <el-form-item label="Phone" prop="pass">
+          <el-form-item label="Phone" prop="Phone">
             <el-input
-              v-model="ruleForm.pass"
+              v-model="ruleForm.Phone"
               type="password"
               autocomplete="off"
             />
           </el-form-item>
-          <el-form-item label="Address1" prop="pass">
+          <el-form-item label="Address1" prop="Address1">
             <el-input
-              v-model="ruleForm.pass"
+              v-model="ruleForm.Address1"
               type="password"
               autocomplete="off"
             />
           </el-form-item>
-          <el-form-item label="Address2" prop="pass">
+          <el-form-item label="Address2" prop="Address2">
             <el-input
-              v-model="ruleForm.pass"
+              v-model="ruleForm.Address2"
               type="password"
               autocomplete="off"
             />
           </el-form-item>
-          <el-form-item label="City" prop="pass">
+          <el-form-item label="City" prop="City">
             <el-input
-              v-model="ruleForm.pass"
+              v-model="ruleForm.City"
               type="password"
               autocomplete="off"
             />
           </el-form-item>
-          <el-form-item label="State" prop="pass">
+          <el-form-item label="State" prop="State">
             <el-input
-              v-model="ruleForm.pass"
+              v-model="ruleForm.State"
               type="password"
               autocomplete="off"
             />
           </el-form-item>
-          <el-form-item label="Zip" prop="pass">
+          <el-form-item label="Zip" prop="Zip">
             <el-input
-              v-model="ruleForm.pass"
+              v-model="ruleForm.Zip"
               type="password"
               autocomplete="off"
             />
           </el-form-item>
-          <el-form-item label="Country" prop="pass">
+          <el-form-item label="Country" prop="Country">
             <el-input
-              v-model="ruleForm.pass"
+              v-model="ruleForm.Country"
               type="password"
               autocomplete="off"
             />
@@ -141,103 +134,33 @@
         </el-form>
         <!-- 基本信息结束 -->
         <!-- 订单显示 -->
-        <el-form
-          ref="ruleFormRef"
-          style="max-width: 600px"
-          :model="ruleForm"
-          :rules="rules"
-          label-width="auto"
-          class="demo-ruleForm"
-          :size="formSize"
-          status-icon
+
+        <el-descriptions
+          title="My Order"
+          direction="vertical"
+          :column="4"
+          :size="size"
+          border
           v-else-if="isOrder === false && isLog === false"
         >
-          <el-form-item label="Activity name" prop="name">
-            <el-input v-model="ruleFormForOrder.name" />
-          </el-form-item>
-          <el-form-item label="Activity zone" prop="region">
-            <el-select
-              v-model="ruleFormForOrder.region"
-              placeholder="Activity zone"
-            >
-              <el-option label="Zone one" value="shanghai" />
-              <el-option label="Zone two" value="beijing" />
-            </el-select>
-          </el-form-item>
-          <el-form-item label="Activity count" prop="count">
-            <el-select-v2
-              v-model="ruleFormForOrder.count"
-              placeholder="Activity count"
-              :options="options"
-            />
-          </el-form-item>
-          <el-form-item label="Activity time" required>
-            <el-col :span="11">
-              <el-form-item prop="date1">
-                <el-date-picker
-                  v-model="ruleFormForOrder.date1"
-                  type="date"
-                  label="Pick a date"
-                  placeholder="Pick a date"
-                  style="width: 100%"
-                />
-              </el-form-item>
-            </el-col>
-            <el-col class="text-center" :span="2">
-              <span class="text-gray-500">-</span>
-            </el-col>
-            <el-col :span="11">
-              <el-form-item prop="date2">
-                <el-time-picker
-                  v-model="ruleFormForOrder.date2"
-                  label="Pick a time"
-                  placeholder="Pick a time"
-                  style="width: 100%"
-                />
-              </el-form-item>
-            </el-col>
-          </el-form-item>
-          <el-form-item label="Instant delivery" prop="delivery">
-            <el-switch v-model="ruleFormForOrder.delivery" />
-          </el-form-item>
-          <el-form-item label="Activity location" prop="location">
-            <el-segmented
-              v-model="ruleFormForOrder.location"
-              :options="locationOptions"
-            />
-          </el-form-item>
-          <el-form-item label="Activity type" prop="type">
-            <el-checkbox-group v-model="ruleFormForOrder.type">
-              <el-checkbox value="Online activities" name="type">
-                Online activities
-              </el-checkbox>
-              <el-checkbox value="Promotion activities" name="type">
-                Promotion activities
-              </el-checkbox>
-              <el-checkbox value="Offline activities" name="type">
-                Offline activities
-              </el-checkbox>
-              <el-checkbox value="Simple brand exposure" name="type">
-                Simple brand exposure
-              </el-checkbox>
-            </el-checkbox-group>
-          </el-form-item>
-          <el-form-item label="Resources" prop="resource">
-            <el-radio-group v-model="ruleFormForOrder.resource">
-              <el-radio value="Sponsorship">Sponsorship</el-radio>
-              <el-radio value="Venue">Venue</el-radio>
-            </el-radio-group>
-          </el-form-item>
-          <el-form-item label="Activity form" prop="desc">
-            <el-input v-model="ruleFormForOrder.desc" type="textarea" />
-          </el-form-item>
-          <el-form-item>
-            <el-button type="primary" @click="submitForm(ruleFormRef)">
-              Create
-            </el-button>
-            <el-button @click="resetForm(ruleFormRef)">Reset</el-button>
-          </el-form-item>
-        </el-form>
+          <el-descriptions-item label="Username"
+            >kooriookami</el-descriptions-item
+          >
+          <el-descriptions-item label="Telephone"
+            >18100000000</el-descriptions-item
+          >
+          <el-descriptions-item label="Address" :span="2"
+            >No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu
+            Province</el-descriptions-item
+          >
+          <el-descriptions-item label="OrderId">
+            <el-tag size="small">Fish</el-tag>
+          </el-descriptions-item>
+          <el-descriptions-item label="Date">
+            <el-tag size="small">2024.5.1</el-tag>
+          </el-descriptions-item>
+          <el-descriptions-item label="TotalPrice"> $50 </el-descriptions-item>
+        </el-descriptions>
         <!-- 订单结束 -->
         <!-- 日志记录 -->
         <el-table
@@ -269,26 +192,15 @@ import type { FormInstance, FormRules } from "element-plus";
 
 const ruleFormRef = ref<FormInstance>();
 
-const checkAge = (rule: any, value: any, callback: any) => {
+const checkValue = (rule: any, value: any, callback: any) => {
   if (!value) {
-    return callback(new Error("Please input the age"));
+    return callback(new Error("请输入"));
   }
-  setTimeout(() => {
-    if (!Number.isInteger(value)) {
-      callback(new Error("Please input digits"));
-    } else {
-      if (value < 18) {
-        callback(new Error("Age must be greater than 18"));
-      } else {
-        callback();
-      }
-    }
-  }, 1000);
 };
 
 const validatePass = (rule: any, value: any, callback: any) => {
   if (value === "") {
-    callback(new Error("Please input the password"));
+    callback(new Error("请输入密码"));
   } else {
     if (ruleForm.checkPass !== "") {
       if (!ruleFormRef.value) return;
@@ -297,11 +209,12 @@ const validatePass = (rule: any, value: any, callback: any) => {
     callback();
   }
 };
+//确认密码
 const validatePass2 = (rule: any, value: any, callback: any) => {
   if (value === "") {
-    callback(new Error("Please input the password again"));
+    callback(new Error("请再次输入密码"));
   } else if (value !== ruleForm.pass) {
-    callback(new Error("Two inputs don't match!"));
+    callback(new Error("输入密码不符"));
   } else {
     callback();
   }
@@ -310,13 +223,31 @@ const validatePass2 = (rule: any, value: any, callback: any) => {
 const ruleForm = reactive({
   pass: "",
   checkPass: "",
-  age: "",
+  FirstName: "",
+  LastName: "",
+  email: "",
+  Phone: "",
+  Zip: "",
+  State: "",
+  City: "",
+  Country: "",
+  Address1: "",
+  Address2: "",
 });
 
 const rules = reactive<FormRules<typeof ruleForm>>({
   pass: [{ validator: validatePass, trigger: "blur" }],
   checkPass: [{ validator: validatePass2, trigger: "blur" }],
-  age: [{ validator: checkAge, trigger: "blur" }],
+  FirstName: [{ validator: checkValue, trigger: "blur" }],
+  LastName: [{ validator: checkValue, trigger: "blur" }],
+  email: [{ validator: checkValue, trigger: "blur" }],
+  Phone: [{ validator: checkValue, trigger: "blur" }],
+  Zip: [{ validator: checkValue, trigger: "blur" }],
+  State: [{ validator: checkValue, trigger: "blur" }],
+  City: [{ validator: checkValue, trigger: "blur" }],
+  Country: [{ validator: checkValue, trigger: "blur" }],
+  Address1: [{ validator: checkValue, trigger: "blur" }],
+  Address2: [{ validator: checkValue, trigger: "blur" }],
 });
 
 const submitForm = (formEl: FormInstance | undefined) => {
@@ -340,118 +271,8 @@ const isOrder = ref(true);
 //订单
 import type { ComponentSize } from "element-plus";
 
-interface RuleForm {
-  name: string;
-  region: string;
-  count: string;
-  date1: string;
-  date2: string;
-  delivery: boolean;
-  location: string;
-  type: string[];
-  resource: string;
-  desc: string;
-}
+const size = ref<ComponentSize>("large");
 
-const formSize = ref<ComponentSize>("default");
-const ruleFormRefForOrder = ref<FormInstance>();
-const ruleFormForOrder = reactive<RuleForm>({
-  name: "Hello",
-  region: "",
-  count: "",
-  date1: "",
-  date2: "",
-  delivery: false,
-  location: "",
-  type: [],
-  resource: "",
-  desc: "",
-});
-
-const locationOptions = ["Home", "Company", "School"];
-
-const rulesForOrder = reactive<FormRules<RuleForm>>({
-  name: [
-    { required: true, message: "Please input Activity name", trigger: "blur" },
-    { min: 3, max: 5, message: "Length should be 3 to 5", trigger: "blur" },
-  ],
-  region: [
-    {
-      required: true,
-      message: "Please select Activity zone",
-      trigger: "change",
-    },
-  ],
-  count: [
-    {
-      required: true,
-      message: "Please select Activity count",
-      trigger: "change",
-    },
-  ],
-  date1: [
-    {
-      type: "date",
-      required: true,
-      message: "Please pick a date",
-      trigger: "change",
-    },
-  ],
-  date2: [
-    {
-      type: "date",
-      required: true,
-      message: "Please pick a time",
-      trigger: "change",
-    },
-  ],
-  location: [
-    {
-      required: true,
-      message: "Please select a location",
-      trigger: "change",
-    },
-  ],
-  type: [
-    {
-      type: "array",
-      required: true,
-      message: "Please select at least one activity type",
-      trigger: "change",
-    },
-  ],
-  resource: [
-    {
-      required: true,
-      message: "Please select activity resource",
-      trigger: "change",
-    },
-  ],
-  desc: [
-    { required: true, message: "Please input activity form", trigger: "blur" },
-  ],
-});
-
-const submitFormForOrder = async (formEl: FormInstance | undefined) => {
-  if (!formEl) return;
-  await formEl.validate((valid, fields) => {
-    if (valid) {
-      console.log("submit!");
-    } else {
-      console.log("error submit!", fields);
-    }
-  });
-};
-
-const resetFormForOrder = (formEl: FormInstance | undefined) => {
-  if (!formEl) return;
-  formEl.resetFields();
-};
-
-const options = Array.from({ length: 10000 }).map((_, idx) => ({
-  value: `${idx + 1}`,
-  label: `${idx + 1}`,
-}));
 //日志相关
 import type { TableColumnCtx } from "element-plus";
 
@@ -511,5 +332,8 @@ const isLog = ref(false);
 .el-link {
   margin-bottom: 20px; /* 设置链接之间的垂直间距 */
   margin-right: 8px; /* 设置链接之间的水平间距 */
+}
+.el-descriptions {
+  margin-top: 20px;
 }
 </style>
