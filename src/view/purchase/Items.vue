@@ -19,11 +19,11 @@
                         <img :src="'/src/assets/' + `${item?.image}`" alt="item.item_id"
                             class="rounded-start item_image">
                     </td>
-                    <td>
+                    <td class="align-middle">
                         <router-link :to="`/item_info/${item.item_id}`">{{ item.item_id }}</router-link>
                     </td>
-                    <td>{{ item.price }}</td>
-                    <td>{{ item.stock }}</td>
+                    <td class="align-middle">{{ item.price }}</td>
+                    <td class="align-middle">{{ item.stock }}</td>
                 </tr>
             </template>
         </ListTable>

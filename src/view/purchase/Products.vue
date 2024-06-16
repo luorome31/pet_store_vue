@@ -13,7 +13,7 @@
             </template>
             <template v-slot:tbody>
                 <tr v-for="product in productList" :key="product.product_id">
-                    <td>
+                    <td class="align-middle">
                         <router-link :to="`/items/${product.product_id}`">{{ product.product_id }}</router-link>
                     </td>
                     <td>{{ product.name }}</td>

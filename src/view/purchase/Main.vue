@@ -15,8 +15,11 @@
                 <template v-slot:price>
                     <p class="card-text"><i class="bi bi-tag"></i> <small class="text-muted">Price:$ {{ item.price
                             }}</small></p>
-                    <router-link :to="`/item_info/${item.item_id}`" class="link text-decoration-none">
+                    <router-link :to="`/cart`" class="link text-decoration-none m-2">
                         <i class="bi bi-bag-heart"></i> add it 
+                    </router-link>
+                    <router-link :to="`/item_info/${item.item_id}`" class="link text-decoration-none">
+                        <i class="bi bi-ticket-detailed"></i> details
                     </router-link>
                 </template>
             </ItemCard>

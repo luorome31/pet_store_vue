@@ -1,7 +1,7 @@
 <template>
     <div class = "row">
         <div
-            class="table-responsive text-center col-12 border-1 mt-4"
+            class="table-responsive text-center col-8 offset-2 border-1 mt-4"
         >
             <table-caption>
                 <slot name="caption"></slot>
@@ -27,4 +27,7 @@
 
 <style lang="scss" scoped>
 
+.table-custom {
+  width: auto; /* 自动调整宽度 */
+}
 </style>

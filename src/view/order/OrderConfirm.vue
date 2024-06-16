@@ -34,7 +34,7 @@
     </div>
     <ModalShow :title="`${title}`" ref="thisModal">
         <template #body>
-            <PayShow />
+            <PayShow ref="payment"/>
         </template>
         <template #footer>
                 <button @click="closeModal" class="btn btn-primary">
@@ -85,12 +85,19 @@ const items = ref([
 const title = "Payment Confirmation";
 let thisModal = ref(null);
 let router = useRouter();
+let payment = ref(null);
 function showModal() {
     thisModal.value.show();
 }
 function closeModal() {
-    thisModal.value.close();
-    router.push('/main')
+    setTimeout(()=>{
+        payment.value.clearContext();
+
+    },300)
+    setTimeout(() => {
+        thisModal.value.close();
+        router.push('/orderDetail');
+    }, 3000);
 }
 </script>
 

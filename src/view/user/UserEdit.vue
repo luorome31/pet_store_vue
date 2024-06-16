@@ -49,6 +49,7 @@
               v-model="ruleForm.pass"
               type="password"
               autocomplete="off"
+              value="**********"
             />
           </el-form-item>
           <el-form-item label="Confirm" prop="checkPass">
@@ -56,73 +57,83 @@
               v-model="ruleForm.checkPass"
               type="password"
               autocomplete="off"
+              value="**********"
             />
           </el-form-item>
           <el-form-item label="FirstName" prop="FirstName">
-            <el-input v-model.number="ruleForm.FirstName" />
+            <el-input v-model.number="ruleForm.FirstName" value="j2ee" />
           </el-form-item>
 
-          <el-form-item label="LastName" prop="LastName">
+          <el-form-item label="LastName" prop="LastName" >
             <el-input
               v-model="ruleForm.LastName"
-              type="password"
+              type="text"
               autocomplete="off"
+              value="j2ee"
             />
           </el-form-item>
-          <el-form-item label="Email" prop="email">
+          <el-form-item label="Email" prop="email"  >
             <el-input
               v-model="ruleForm.email"
-              type="password"
+              type="text"
               autocomplete="off"
+              value="2743057396@qq.com"
             />
           </el-form-item>
-          <el-form-item label="Phone" prop="Phone">
+          <el-form-item label="Phone" prop="Phone" >
             <el-input
               v-model="ruleForm.Phone"
-              type="password"
+              type="text"
               autocomplete="off"
+              value="88488888"
             />
           </el-form-item>
           <el-form-item label="Address1" prop="Address1">
             <el-input
               v-model="ruleForm.Address1"
-              type="password"
+              type="text"
               autocomplete="off"
+              value="CSU railway campus"
             />
           </el-form-item>
           <el-form-item label="Address2" prop="Address2">
             <el-input
               v-model="ruleForm.Address2"
-              type="password"
+              type="text"
               autocomplete="off"
+              value="a faraway place"
             />
           </el-form-item>
           <el-form-item label="City" prop="City">
             <el-input
               v-model="ruleForm.City"
-              type="password"
+              type="text"
               autocomplete="off"
+              value="Changsha"
             />
           </el-form-item>
           <el-form-item label="State" prop="State">
             <el-input
               v-model="ruleForm.State"
-              type="password"
+              type="text"
               autocomplete="off"
+              value="Hunan"
             />
           </el-form-item>
           <el-form-item label="Zip" prop="Zip">
             <el-input
               v-model="ruleForm.Zip"
-              type="password"
+              type="text"
               autocomplete="off"
+              value="366300"
             />
           </el-form-item>
           <el-form-item label="Country" prop="Country">
             <el-input
               v-model="ruleForm.Country"
-              type="password"
+              type="text"
               autocomplete="off"
+              value="China"
             />
           </el-form-item>
           <el-form-item>

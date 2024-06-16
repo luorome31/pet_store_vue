@@ -30,7 +30,7 @@
                     <td>${{ item.price }}.00</td>
                     <td>${{ item.price * item.quantity }}.00</td>
                     <td>
-                        <button class="btn btn-outline-danger btn-sm"><i class="bi bi-trash-fill"></i>Remove</button>
+                        <button class="btn btn-outline-danger btn-sm" @click="remove(index)"><i class="bi bi-trash-fill"></i>Remove</button>
                     </td>
                 </tr>
             </template>
@@ -54,6 +54,16 @@
                 <button @click="closeModal"  class="btn btn-primary">check</button>
             </template>
         </ModalShow>
+
+        <ModalShow :title="`deletion confirm`" ref="removeModal">
+            <template #body>
+                Do you confirm deletion?
+                <br>
+            </template>
+            <template #footer>
+                <button @click="deleteModal"  class="btn btn-primary">confirm</button>
+            </template>
+        </ModalShow>
 </template>
 
 <script setup>
@@ -66,7 +76,9 @@ import axios from "axios";
 
 const title = "Commit your order";
 let thisModal = ref(null);
+let removeModal = ref(null);
 let router = useRouter();
+let deleteItem = null;
 function showModal() {
     thisModal.value.show();
 }
@@ -74,11 +86,18 @@ function closeModal () {
     thisModal.value.close();
     router.push('/orderConfirm')
 }
+function deleteModal(){
+    removeModal.value.close();
+    cartItems.value.splice(deleteItem,1);
+}
 //单个物品数量的改变监听
 function input_value_changed(newValue,index){
     cartItems.value[index].quantity = newValue;
 }
-
+function remove(index){
+    deleteItem = index;
+    removeModal.value.show();
+}
 
 
 /* ----------------------------------------------------------------*/

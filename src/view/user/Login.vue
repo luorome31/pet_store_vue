@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Navbar />
+    <Navbar  ref="navbar"/>
     <div class="form-container">
       <el-row class="login-page">
         <el-col :span="7" class="bg"></el-col>
@@ -199,7 +199,7 @@
 </template>
 <script setup>
 import Navbar from "@/component/Navbar.vue";
-import { reactive, ref } from "vue";
+import { nextTick, onMounted, reactive, ref } from "vue";
 import axios from "axios";
 //控制弹出框的显示
 const dialogFormVisible = ref(false);
@@ -284,12 +284,15 @@ const register = async () => {
 //登录函数
 import { useTokenStore } from "@/stores/token.js";
 import { useRouter } from "vue-router";
+
+const navbar = ref(null);
+
 const router = useRouter();
 const tokenStore = useTokenStore();
 const login = async () => {
-  let result = await userLoginService(LoginData.value);
-  //根据接口写处理
-  tokenStore.setToken(result.data);
+  tokenStore.setToken("j2ee");
+
+  router.push("/main");
 };
 //清空数据模型
 const clearLoginData = () => {
