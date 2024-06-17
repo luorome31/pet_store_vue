@@ -1,8 +1,9 @@
 <template>
-    <div class="container">
+    <div class="container align-items-center">
         <Navbar />
         <div class="row mt-4">
-            <ItemCard v-for="item in item_main" :key="item.id">
+            <div class="row">
+                <ItemCard v-for="item in item_main" :key="item.id">
                 <template v-slot:img>
                     <img :src="'/src/assets/' + `${item?.image}`" alt="item.name" class="w-100 rounded">
                 </template>
@@ -14,15 +15,26 @@
                 </template>
                 <template v-slot:price>
                     <p class="card-text"><i class="bi bi-tag"></i> <small class="text-muted">Price:$ {{ item.price
-                            }}</small></p>
+                    }}</small></p>
                     <router-link :to="`/cart`" class="link text-decoration-none m-2">
-                        <i class="bi bi-bag-heart"></i> add it 
+                        <i class="bi bi-bag-heart"></i> add it
                     </router-link>
                     <router-link :to="`/item_info/${item.item_id}`" class="link text-decoration-none">
                         <i class="bi bi-ticket-detailed"></i> details
                     </router-link>
                 </template>
             </ItemCard>
+            </div>
+            
+            <div class="row offset-5">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">上一页</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item "><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">下一页</a></li>
+                </ul>
+            </div>  
         </div>
 
     </div>

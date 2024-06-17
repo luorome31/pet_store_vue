@@ -47,7 +47,7 @@ const keyword = ref("");
 const suggestions = ref([]);
 const tokenStore = useTokenStore();
 
-const testProducts = ["Dog Food", "Cat Toy", "Bird Cage", "Fish Tank", "Dog Collar", "Cat Bed"];
+const testProducts = ["FL-DLH-02", "FI-FW-02", "FL-DLH-01", "FI-FW-02", "AV-SB-02", "AV-SB-02"];
 
 watchEffect(() => {
   console.log(tokenStore.tokenValue);

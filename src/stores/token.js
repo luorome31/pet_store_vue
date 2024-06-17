@@ -17,9 +17,20 @@ export const useTokenStore =defineStore('token',()=>{
     const removeToken=()=>{
         token.value=''
     }
+    const getNumber = computed(()=>{
+        return number.value;
+    })
+    let number = ref(1);
+    const addNumber = ()=>{
+        console.log('number:',number.value);
+        number.value++;
+    }
+    const setNumber = (newNumber)=>{
+        number.value = newNumber;
+    }
     //返回
     return {
-        token,setToken,removeToken,tokenValue
+        token,setToken,removeToken,tokenValue,number,addNumber,getNumber,setNumber
     }
     //持久化存储
     {persist:true}

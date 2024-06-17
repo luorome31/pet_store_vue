@@ -56,7 +56,7 @@ const props = defineProps({
     lastDetails: {
         type: Array,
         default: () => [
-            { description: '<b>Total</b>', value: '<b class="text-success">$199.00</b>' },
+            { description: '<b>Total</b>', value: '<b class="text-success">$41.00</b>' },
         ],
     },
 }

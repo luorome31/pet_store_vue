@@ -249,9 +249,9 @@ const rules = {
       trigger: "blur",
     },
     {
-      min: 5,
+      min: 4,
       max: 16,
-      message: "用户名长度为5—16为非空字符",
+      message: "用户名长度为4—16为非空字符",
       trigger: "blur",
     },
   ],
@@ -262,9 +262,9 @@ const rules = {
       trigger: "blur",
     },
     {
-      min: 5,
+      min: 4,
       max: 16,
-      message: "密码长度为5—16为非空字符",
+      message: "密码长度为4—16为非空字符",
       trigger: "blur",
     },
   ],
@@ -289,9 +289,9 @@ const navbar = ref(null);
 
 const router = useRouter();
 const tokenStore = useTokenStore();
-const login = async () => {
+const login = () => {
   tokenStore.setToken("j2ee");
-
+  tokenStore.setNumber(1  );
   router.push("/main");
 };
 //清空数据模型

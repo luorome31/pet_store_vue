@@ -3,7 +3,7 @@
         <div class="card mb-3 col-10 offset-1 mt-5 ">
             <div class="row g-0 justify-content-center align-items-center">
                 <div class="col-md-4">
-                    <img :src="itemDetail && itemDetail.image ? imageUrl: '@/assets/image1.jpeg'" alt="My Image">
+                    <img :src="itemDetail && itemDetail.image ? imageUrl: '@/assets/image1.jpeg'" class="rounded" style="max-width: 400px;" alt="My Image">
                 </div>
                 <div class="col-md-8 ">
                     <div class="card-body ms-5">

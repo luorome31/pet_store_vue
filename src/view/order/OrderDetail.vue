@@ -44,7 +44,7 @@
                                         <div class="text-end">
                                             <p class="mb-0"><i class="bi bi-person-fill-check m-2"></i><small
                                                     class="text-muted">j2ee</small></p>
-                                            <p class="mb-0">Your order has been delivered</p>
+                                            <p class="mb-0">Your order has been processed</p>
                                         </div>
                                     </div>
 
@@ -107,31 +107,26 @@
 <script setup>
 import Navbar from "@/component/Navbar.vue";
 import { ref } from "vue";
+import img1 from "@/assets/pexels-fish-1.jpeg";
+import img2 from "@/assets/pexels-fish-2.jpeg";
+import img3 from "@/assets/pexels-fish-3.jpeg";
+import img4 from "@/assets/pexels-fish-4.jpeg";
+
+
 const items = ref([
     {
         item_id: "EST-1",
-        price: 199.99,
+        price: 17.00,
         quantity: 1,
-        url: "https://tuapi.eees.cc/dongman/pc/TUAPI-EEES-CC--1564737439.jpg",
+        url: img1,
     },
     {
-        item_id: "EST-2",
-        price: 299.99,
+        item_id: "EST-10",
+        price: 24.00,
         quantity: 2,
-        url: "https://tuapi.eees.cc/dongman/pc/TUAPI-EEES-CC--1564737439.jpg",
+        url: img2,
     },
-    {
-        item_id: "EST-2",
-        price: 299.99,
-        quantity: 2,
-        url: "https://tuapi.eees.cc/dongman/pc/TUAPI-EEES-CC--1564737439.jpg",
-    },
-    {
-        item_id: "EST-2",
-        price: 299.99,
-        quantity: 2,
-        url: "https://tuapi.eees.cc/dongman/pc/TUAPI-EEES-CC--1564737439.jpg",
-    },
+
 ]);
 </script>
 

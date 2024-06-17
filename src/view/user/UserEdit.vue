@@ -155,22 +155,22 @@
           v-else-if="isOrder === false && isLog === false"
         >
           <el-descriptions-item label="Username"
-            >kooriookami</el-descriptions-item
+            >j2ee</el-descriptions-item
           >
           <el-descriptions-item label="Telephone"
-            >18100000000</el-descriptions-item
+            >18250147393</el-descriptions-item
           >
           <el-descriptions-item label="Address" :span="2"
-            >No.1188, Wuzhong Avenue, Wuzhong District, Suzhou, Jiangsu
-            Province</el-descriptions-item
+            >Changsha railway campus</el-descriptions-item
           >
           <el-descriptions-item label="OrderId">
-            <el-tag size="small">Fish</el-tag>
+            <el-tag size="small">1001</el-tag>
           </el-descriptions-item>
           <el-descriptions-item label="Date">
             <el-tag size="small">2024.5.1</el-tag>
           </el-descriptions-item>
-          <el-descriptions-item label="TotalPrice"> $50 </el-descriptions-item>
+          <el-descriptions-item label="TotalPrice"> $24 </el-descriptions-item>
+          
         </el-descriptions>
         <!-- 订单结束 -->
         <!-- 日志记录 -->
@@ -299,24 +299,29 @@ const formatter = (row: User, column: TableColumnCtx<User>) => {
 
 const tableData: User[] = [
   {
-    date: "2016-05-03",
-    name: "Tom",
+    date: "2024-05-03",
+    name: "j2ee",
     address: "No. 189, Grove St, Los Angeles",
   },
   {
-    date: "2016-05-02",
-    name: "Tom",
+    date: "2024-05-02",
+    name: "j2ee",
     address: "No. 189, Grove St, Los Angeles",
   },
   {
-    date: "2016-05-04",
-    name: "Tom",
+    date: "2024-05-04",
+    name: "j2ee",
     address: "No. 189, Grove St, Los Angeles",
   },
   {
-    date: "2016-05-01",
-    name: "Tom",
-    address: "No. 189, Grove St, Los Angeles",
+    date: "2024-06-15",
+    name: "j2ee",
+    address: "check Goldfish",
+  },
+  {
+    date: "2024-06-16",
+    name: "j2ee",
+    address: "check Tiger Shark",
   },
 ];
 const isLog = ref(false);

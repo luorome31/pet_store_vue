@@ -1,22 +1,69 @@
 {
-  "cart": {
+  "cart_after": {
     "code": 2000,
     "message": "success",
     "data": {
       "items": [
         {
-          "item_id": "EST-1",
-          "quantity": 1,
+          "item_id": "EST-10",
+          "quantity": 2,
           "product_id": "FI-FW-01",
           "is_storked": true,
-          "price": 10
+          "price": 12.00
         },
+        {
+          "item_id": "EST-17",
+          "quantity": 1,
+          "product_id": "FL-DLH-02",
+          "is_storked": true,
+          "price": 94.00
+        }
+      ]
+    },
+    "total_price": 30
+  },
+  "cart_3": {
+    "code": 2000,
+    "message": "success",
+    "data": {
+      "items": [
         {
           "item_id": "EST-10",
           "quantity": 2,
           "product_id": "FI-FW-01",
           "is_storked": true,
-          "price": 10
+          "price": 12.00
+        },
+
+        {
+          "item_id": "EST-17",
+          "quantity": 1,
+          "product_id": "FL-DLH-02",
+          "is_storked": true,
+          "price": 94.00
+        },
+        {
+          "item_id": "EST-1",
+          "quantity": 1,
+          "product_id": "FI-FW-01",
+          "is_storked": true,
+          "price": 17.00
+        }
+      ]
+    },
+    "total_price": 30
+  },
+  "cart_init":{
+    "code": 2000,
+    "message": "success",
+    "data": {
+      "items": [
+        {
+          "item_id": "EST-10",
+          "quantity": 2,
+          "product_id": "FI-FW-01",
+          "is_storked": true,
+          "price": 12.00
         }
       ]
     },
@@ -50,9 +97,9 @@
       "item_id": "EST-1",
       "product_id": "FI-SW-01",
       "description": "Large Fresh Water fish from Lord.",
-      "image": "image1.jpeg",
-      "manufacturer": "XYZ Pets",
-      "price": 199.99,
+      "image": "pexels-fish-1.jpeg",
+      "manufacturer": "XYZ Pets", 
+      "price": 17.00,
       "stock": 50
     }
   },
@@ -63,9 +110,9 @@
       "item_id": "EST-10",
       "product_id": "FI-SW-01",
       "description": "Large Fresh Water fish from Test.",
-      "image": "image2.jpeg",
+      "image": "pexels-fish-2.jpeg",
       "manufacturer": "111 Pets",
-      "price": 11.99,
+      "price": 12.00,
       "stock": 11
     }
   },
@@ -94,15 +141,15 @@
     "data": [
       {
         "item_id": "EST-1",
-        "price": 199.99,
+        "price": 17.00,
         "stock": 50,
-        "image": "image1.jpeg"
+        "image": "pexels-fish-1.jpeg"
       },
       {
         "item_id": "EST-10",
-        "price": 199.99,
-        "stock": 50,
-        "image": "image2.jpeg"
+        "price": 12.00,
+        "stock": 11,
+        "image": "pexels-fish-2.jpeg"
       }
     ]
   },
@@ -113,33 +160,75 @@
       "items": [
         {
           "item_id": "EST-1",
-          "price": 199.99,
+          "price": 17.00,
           "stock": 50,
-          "image": "image4.jpg"
+          "image": "pexels-fish-1.jpeg"
         },
         {
           "item_id": "EST-10",
-          "price": 199.99,
-          "stock": 50,
-          "image": "image5.jpg"
+          "price": 12.00,
+          "stock": 11,
+          "image": "pexels-fish-2.jpeg"
         },
         {
-          "item_id": "EST-1",
-          "price": 199.99,
-          "stock": 50,
-          "image": "image6.jpg"
+          "item_id": "EST-3",
+          "price": 19.00,
+          "stock": 30,
+          "image": "pexels-fish-3.jpeg"
         },
         {
-          "item_id": "EST-1",
-          "price": 199.99,
+          "item_id": "EST-4",
+          "price": 19.00,
           "stock": 50,
-          "image": "image1.jpeg"
+          "image": "pexels-fish-4.jpeg"
         },
         {
-          "item_id": "EST-1",
-          "price": 199.99,
+          "item_id": "EST-5",
+          "price": 19.00,
+          "stock": 100,
+          "image": "pexels-fish-5.jpg"
+        },
+        {
+          "item_id": "EST-22",
+          "price": 139.00,
+          "stock": 34,
+          "image": "pexels-dog-1.jpeg"
+        },
+        {
+          "item_id": "EST-23",
+          "price": 145.00,
           "stock": 50,
-          "image": "image2.jpeg"
+          "image": "pexels-dog-2.jpeg"
+        },
+        {
+          "item_id": "EST-25",
+          "price": 256.00,
+          "stock": 15,
+          "image": "pexels-dog-3.jpeg"
+        },
+        {
+          "item_id": "EST-26",
+          "price": 325.00,
+          "stock": 30,
+          "image": "pexels-dog-4.jpeg"
+        },
+        {
+          "item_id": "EST-17",
+          "price": 94.00,
+          "stock": 50,
+          "image": "pexels-cat-1.jpeg"
+        },
+        {
+          "item_id": "EST-16",
+          "price": 94.00,
+          "stock": 100,
+          "image": "pexels-cat-2.jpeg"
+        },
+        {
+          "item_id": "EST-15",
+          "price": 24.00,
+          "stock": 40,
+          "image": "pexels-cat-3.jpeg"
         }
       ],
       "total_pages": 10,
